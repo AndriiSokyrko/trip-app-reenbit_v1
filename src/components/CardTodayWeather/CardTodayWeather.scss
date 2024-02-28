@@ -1,0 +1,13 @@
+.section_weather{
+  display: flex;
+  flex-direction: column;
+  margin: 50px 50px;
+  color: white;
+
+  .section_weather--content {
+      display: flex;
+        font-size: 42px;
+      line-height: 32px;
+    }
+
+}

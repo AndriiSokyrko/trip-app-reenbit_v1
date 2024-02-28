@@ -1,0 +1,26 @@
+.section_weather--week{
+  max-width: 50px;
+  max-height: 50px;
+  //display: grid;
+  //grid-direction: column;
+  margin: 50px 50px;
+  h1{
+    font-size: 14px;
+  }
+  .section_weather--week--content {
+    display: flex;
+    flex-direction: column;
+    //grid-template-columns: repeat(6, 1fr);
+    flex-wrap: wrap;
+    font-size: 42px;
+    line-height: 32px;
+    img{
+      width: 100%;
+      height: 25%;
+    }
+    .section_weather--week--content--temperature{
+      font-size: 14px;
+    }
+  }
+
+}

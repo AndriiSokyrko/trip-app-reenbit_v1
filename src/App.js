@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import AppRouters from "./app-routers/appRouters";
+import {TripsContext} from "./trips-context/tripsContext"
+import {tripsInit} from "./data/cities";
+import {useState} from "react";
 function App() {
+    const [trips, setTrips] = useState(()=>tripsInit)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <TripsContext.Provider value={{trips, setTrips}}>
+          <div className="App">
+              <AppRouters/>
+          </div>
+      </TripsContext.Provider>
   );
 }
 

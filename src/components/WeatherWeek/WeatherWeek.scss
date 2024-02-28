@@ -1,0 +1,11 @@
+.weather_week{
+  h1{
+    margin-bottom: 10px;
+  }
+  .weather_week--content {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

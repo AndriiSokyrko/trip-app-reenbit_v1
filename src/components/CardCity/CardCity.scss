@@ -1,0 +1,36 @@
+.card_city {
+    margin: 10px;
+    border: solid gray 2px;
+    img {
+        width: 100%;
+        height: 66%;
+    }
+    .card_city--name{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .card_city--period{
+        font-size: 12px;
+        margin-left: 10px;
+        padding-bottom: 20px;
+    }
+}
+.card_city--active {
+    margin: 10px;
+    border: solid green 2px;
+    background: #ededed;
+    box-shadow: 10px 5px 5px gray;
+    img {
+        width: 100%;
+        height: 66%;
+    }
+    .card_city--name{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .card_city--period{
+        font-size: 12px;
+        margin-left: 10px;
+        padding-bottom: 20px;
+    }
+}

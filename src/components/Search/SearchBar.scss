@@ -1,0 +1,23 @@
+.search_wrapper {
+  margin-bottom: 30px;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 30%;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 4px;
+  .search-icon {
+    background: #ffffff url("../../images/search.svg") 50%/50% no-repeat;
+    border: none;
+    width: 26px;
+    height:100%;
+  }
+  .search_wrapper--input{
+    outline: none;
+    height: 100%;
+     border: none;
+    padding: 0;
+  }
+}
