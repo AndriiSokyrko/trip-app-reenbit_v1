@@ -4,7 +4,7 @@ import "./Timer.scss"
 function Timer({tripId}) {
     let dataTrips = useContext(TripsContext)
     let data = dataTrips.trips.find(trip=> trip.id===+tripId)
-    const startDate=  new Date(data.date1)
+    const startDate =  new Date(data.date1)
     const day= 24*3600*1000
     const hour=3600*1000
     const min = 60*1000
@@ -16,26 +16,21 @@ function Timer({tripId}) {
         setInterval(() => {
             const today = Date.now()
             let diff = startDate - today
-            // setTempDif(diff)
              let tempDif = diff
 
 
             if (tempDif > day) {
                 let ost = tempDif % day
                 let tempDay = Math.ceil(tempDif / day)
-                // if(tempDay !== days) {
                     setDays(tempDay)
                     tempDif = ost
-                // }
             }
 
             if (tempDif <= day) {
                 let ost = tempDif % hour
                 let tempHours = Math.ceil(tempDif / hour)
-                // if(tempHours !== hours) {
                     setHours(tempHours)
                     tempDif = ost
-                // }
             }
             if (tempDif <= hour) {
                 let ost = tempDif % min
@@ -49,11 +44,8 @@ function Timer({tripId}) {
              if (tempDif  <= min) {
                  let ost = tempDif % 1000
                  let tempSeconds = Math.ceil(tempDif/1000)
-                 // if( tempSeconds!== seconds) {
                      setSeconds(tempSeconds)
                      tempDif = ost
-
-                 // }
              }
         }, 1000)
 

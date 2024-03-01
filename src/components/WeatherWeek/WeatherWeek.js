@@ -7,7 +7,7 @@ function WeatherWeek({props}) {
             <h1>Week</h1>
             <div className="weather_week--content">
                 {
-                    props.days.length &&  props.days.map(day => <CardWeekOneDay day={day}  key={day.datetimeEpoch}/>)
+                  props.days.map(day => <CardWeekOneDay day={day}  key={day.datetimeEpoch}/>)
                 }
             </div>
 

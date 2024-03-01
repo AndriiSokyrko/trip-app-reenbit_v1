@@ -59,12 +59,12 @@ function MainComponent() {
                     }
                     <CardCityAdd />
                 </div>
-                {Object.keys(weatherAllPeriod).length && <WeatherWeek props={weatherAllPeriod} />}
+                {Object.keys(weatherAllPeriod).length ? <WeatherWeek props={weatherAllPeriod} />:''}
             </div>
 
             <aside className="main_aside">
                 {Object.keys(weatherForToday).length && <CardTodayWeather props={weatherForToday}/>}
-                {cardActive && <Timer tripId={cardActive}/>}
+                {cardActive ? <Timer tripId={cardActive}/> :''}
             </aside>
         </main>
 )
