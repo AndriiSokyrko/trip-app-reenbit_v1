@@ -52,7 +52,7 @@ const cities = [
         image: "barcelona.jpg",
     },
 ]
-const token_old = 'TR9V49QVZMVNT4E55PNC8N2MM'
-const token = 'T26657FL2BFMUDQZEZ4YNMRA3'
+const token = 'TR9V49QVZMVNT4E55PNC8N2MM'
+const token_ol = 'T26657FL2BFMUDQZEZ4YNMRA3'
 const pathToWeather = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
 export {cities,tripsInit,token, pathToWeather}

@@ -1,13 +1,25 @@
-.section_weather{
+.section_weather {
   display: flex;
   flex-direction: column;
   margin: 50px 50px;
   color: white;
+  box-sizing: border-box;
 
   .section_weather--content {
-      display: flex;
-        font-size: 42px;
-      line-height: 32px;
+    width: 100%;
+    display: flex;
+    grid-template-columns: 40% 60%;
+
+    font-size: 42px;
+    line-height: 32px;
+
+    image {
+      width: 100%;
     }
+
+    .section_weather--content--temperature {
+      width: 100%;
+    }
+  }
 
 }

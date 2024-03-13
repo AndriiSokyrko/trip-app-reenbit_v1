@@ -1,8 +1,9 @@
 body{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   *, *:before,*:after{
-    box-sizing: border-box;
+    box-sizing: inherit;
   }
 
 }
@@ -16,7 +17,7 @@ body{
   .main {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 65% 35%;
 
     .main_content {
 
@@ -37,6 +38,9 @@ body{
     }
 
     .main_aside {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       background: #0a0639 ;
     }
   }
