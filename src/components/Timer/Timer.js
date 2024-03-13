@@ -1,53 +1,62 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useMemo, useState} from 'react';
 import {TripsContext} from "../../trips-context/tripsContext";
 import "./Timer.scss"
+
 function Timer({tripId}) {
     let dataTrips = useContext(TripsContext)
-    let data = dataTrips.trips.find(trip=> trip.id===+tripId)
-    const startDate =  new Date(data.date1)
-    const day= 24*3600*1000
-    const hour=3600*1000
-    const min = 60*1000
+    let data = dataTrips.trips.find(trip => trip.id === +tripId)
+    const startDate = new Date(data.date1)
+    const day = 24 * 3600 * 1000
+    const hour = 3600 * 1000
+    const minute = 60 * 1000
+    const second = 1000
     const [days, setDays] = useState(0)
     const [hours, setHours] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
+    const [today, setToday] = useState(Date.now())
 
-        setInterval(() => {
-            const today = Date.now()
-            let diff = startDate - today
-             let tempDif = diff
+    let diff = startDate - today
+    let tempDif = diff
+    let tempDay
+    let tempHours
+    let tempMinutes
+    let tempSeconds
 
+function compTime(tempDif,par){
+    return  Math.ceil(tempDif / par) < 10 ? '0' + Math.ceil(tempDif / par) : Math.ceil(tempDif / par)
+}
 
-            if (tempDif > day) {
-                let ost = tempDif % day
-                let tempDay = Math.ceil(tempDif / day)
-                    setDays(tempDay)
-                    tempDif = ost
-            }
+    if (tempDif > day) {
+        let ost = tempDif % day
+        tempDay =compTime(tempDif,day)
+        tempDif = ost
+    }
+    if (tempDif <= day) {
+        let ost = tempDif % hour
+        tempHours = compTime(tempDif,hour)
+        tempDif = ost
+    }
+    if (tempDif <= hour) {
+        let ost = tempDif % minute
+        tempMinutes = compTime(tempDif,minute)
+        tempDif = ost
+    }
 
-            if (tempDif <= day) {
-                let ost = tempDif % hour
-                let tempHours = Math.ceil(tempDif / hour)
-                    setHours(tempHours)
-                    tempDif = ost
-            }
-            if (tempDif <= hour) {
-                let ost = tempDif % min
-                let tempMinutes = Math.ceil(tempDif / min)
-                if(tempMinutes !== minutes) {
-                setMinutes(prevMinutes=>tempMinutes)
-                    tempDif = ost
-                }
-            }
+    if (tempDif <= minute) {
+        let ost = tempDif % second
+        tempSeconds = compTime(tempDif,second)
+        tempDif = ost
+    }
 
-             if (tempDif  <= min) {
-                 let ost = tempDif % 1000
-                 let tempSeconds = Math.ceil(tempDif/1000)
-                     setSeconds(tempSeconds)
-                     tempDif = ost
-             }
-        }, 1000)
+    useMemo(() => setDays(tempDay), [tempDay])
+    useMemo(() => setHours(tempHours), [tempHours])
+    useMemo(() => setMinutes(tempMinutes), [tempMinutes])
+    useMemo(() => setSeconds(tempSeconds), [tempSeconds])
+
+    setInterval(() => {
+        setToday(Date.now())
+    }, 1000)
 
     return (
         <div className="timer_wrapper">

@@ -1,6 +1,10 @@
 body{
   margin: 0;
   padding: 0;
+  *, *:before,*:after{
+    box-sizing: border-box;
+  }
+
 }
 .App {
   background-color: #ececec;
@@ -9,13 +13,13 @@ body{
   max-height: 100vh;
   text-align: left;
 
-
   .main {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
 
     .main_content {
+
       width: 100%;
       min-height: 100vh;
       background: #ececec;
