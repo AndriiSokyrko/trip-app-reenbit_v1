@@ -77,7 +77,7 @@ function FormCItyAdd({addTrip}) {
             <p className={classMessage}>Form hasn't correct dates</p>
             <form  className="form_add--trip--form" action="">
                 <h2>City<span>*</span></h2>
-                <select className="form_add--select" onChange={handelSelectCity}  >
+                <select className="form_add--select" onChange={handelSelectCity} defaultValue={cities[0].name} >
                     <option value="none" selected disabled hidden>Select an Option</option>
                     {cities.length && cities.map(city =>
                             <option className="form_add--select-option" value={city.name} key={city.id}>{city.name}</option>

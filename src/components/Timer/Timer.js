@@ -15,41 +15,26 @@ function Timer({tripId}) {
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [today, setToday] = useState(Date.now())
-
     let diff = startDate - today
-    let tempDif = diff
-    let tempDay
+    let tempDays
     let tempHours
     let tempMinutes
     let tempSeconds
 
-function compTime(tempDif,par){
-    return  Math.ceil(tempDif / par) < 10 ? '0' + Math.ceil(tempDif / par) : Math.ceil(tempDif / par)
-}
 
-    if (tempDif > day) {
-        let ost = tempDif % day
-        tempDay =compTime(tempDif,day)
-        tempDif = ost
-    }
-    if (tempDif <= day) {
-        let ost = tempDif % hour
-        tempHours = compTime(tempDif,hour)
-        tempDif = ost
-    }
-    if (tempDif <= hour) {
-        let ost = tempDif % minute
-        tempMinutes = compTime(tempDif,minute)
-        tempDif = ost
+    function compTime(tempDif, par) {
+        return Math.floor(tempDif / par) < 10 ? '0' + Math.floor(tempDif / par) : Math.floor(tempDif / par)
     }
 
-    if (tempDif <= minute) {
-        let ost = tempDif % second
-        tempSeconds = compTime(tempDif,second)
-        tempDif = ost
-    }
+    tempDays = compTime(diff, day)
+    diff = diff % day
+    tempHours = compTime(diff, hour)
+    diff = diff % hour
+    tempMinutes = compTime(diff, minute)
+    diff = diff % minute
+    tempSeconds = compTime(diff, second)
 
-    useMemo(() => setDays(tempDay), [tempDay])
+    useMemo(() => setDays(tempDays), [tempDays])
     useMemo(() => setHours(tempHours), [tempHours])
     useMemo(() => setMinutes(tempMinutes), [tempMinutes])
     useMemo(() => setSeconds(tempSeconds), [tempSeconds])
