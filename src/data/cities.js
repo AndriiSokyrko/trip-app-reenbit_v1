@@ -3,30 +3,30 @@ const tripsInit = [
         id: 1,
         name: "London,Uk",
         image: "london.jpg",
-        date1: "2024-04-01",
-        date2: "2024-04-06",
+        date1: "2024-07-01",
+        date2: "2024-07-06",
     },
     {
         id: 2,
         name: "Tokyo,Jp",
         image: "tokyo.jpg",
-        date1: "2024-04-07",
-        date2: "2024-04-14",
+        date1: "2024-07-07",
+        date2: "2024-07-14",
     },
     {
         id: 3,
         name: "Berlin,De",
         image: "berlin.jpg",
-        date1:"2024-04-21",
-        date2: "2024-04-26",
+        date1:"2024-07-21",
+        date2: "2024-07-26",
 
     },
     {
         id: 4,
         name: "Barcelona,Es",
         image: "barcelona.jpg",
-        date1: "2024-04-01",
-        date2: "2024-04-10",
+        date1: "2024-07-01",
+        date2: "2024-07-10",
     },
 ]
 const cities = [
